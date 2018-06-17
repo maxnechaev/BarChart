@@ -1,3 +1,54 @@
+<div id="options"><h2>Choose the Chart&#39;s options: </h2>
+  <label class="slider" for="widthInput">Width: </label>
+  <input id="widthInput" class="optionsInput" type="range" min="20" max="100" name="Chart&#39;s width" value="40" onchange="updateTextInput(this.value);"><br /><br />
+  <label class="slider" for="heightInput">Height: </label>
+  <input id="heightInput" class="optionsInput" type="range" min="20" max="500" name="Chart&#39;s height" value="140"  onchange="updateTextInput(this.value);"><br /><br />
+
+</div>
+
+<style>
+  #options {
+    padding: 0 26px;
+    background-color: #e0e0eb;
+    color: #000;
+    font-size: 13px;
+    font-family: Helvetica, arial, sans-serif;
+    min-width: 200px;
+    max-width: 400px;
+  }
+  #widthInput {
+
+  }
+  #heightInput {
+
+  }
+  label.slider {
+    display: inline-block;
+    width: 50px;
+  }
+
+</style>
+
+
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+  var drawBarChart = function (){
+    var data = [1, 2, 3, 4, 5];
+    function updateTextInput(val) {
+      document.getElementsByTagName('optionsInput').value=val;
+    }
+    var element = document.getElementById("barChart").innerHTML = barChart;
+  }
+
+  alert(drawBarChart(data, options, element));
+
+  // The data parameter will be the data the chart should work from Start with just an Array of numbers
+  // e.g. [1, 2, 3, 4, 5]
+  //
+  // The options parameter should be an object which has options for the chart. - CSS
+  // e.g. width and height of the bar chart
+  //
+  // The element parameter should be a DOM element or jQuery element that the chart will get rendered into.
+
+
 
 </script>
